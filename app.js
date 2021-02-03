@@ -36,6 +36,11 @@ var pages = [
     "path": "./pages/express-main-page/main",
     "routePath": "/",
     "staticPath": ""
+  },
+  {
+    "path": "./pages/MyPage/page2",
+    "routePath": "/mypage",
+    "staticPath": ""
   }
 ]
 
