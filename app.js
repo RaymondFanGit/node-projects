@@ -33,7 +33,7 @@ function routePage(requirePath, routePath, staticPath = "") {
 // route pages
 var pages = [
   {
-    "path": "./pages/main/main",
+    "path": "./pages/express-main-page/main",
     "routePath": "/",
     "staticPath": ""
   }
