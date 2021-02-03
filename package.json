@@ -4,7 +4,8 @@
   "description": "misc node projects",
   "main": "index.js",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "4.17.1",
+    "hogan-express": "0.5.2"
   },
   "devDependencies": {},
   "scripts": {
