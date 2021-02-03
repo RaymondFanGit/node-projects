@@ -16,9 +16,29 @@ app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 });
 
-// route pages
-var main = require("./pages/main/main");
-app.use("/", main);
+function routePage(requirePath, routePath, staticPath = "") {
+  try {
+    var moduleName = require(requirePath);
+    if (staticPath != "") {
+      app.use(express.static(path.join(__dirname, staticPath)));
+    }
+    app.use(routePath, moduleName);
+  }
+  catch (e) {
+    console.log(e);
+    console.log("no such module");
+  }
+}
 
-var example = require("./pages/example/example");
-app.use("/example", example);
+// route pages
+var pages = [
+  {
+    "path": "./pages/main/main",
+    "routePath": "/",
+    "staticPath": ""
+  }
+]
+
+pages.forEach((item, i) => {
+  routePage(item["path"], item["routePath"], item["staticPath"])
+});
